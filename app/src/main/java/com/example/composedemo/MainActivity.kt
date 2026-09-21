@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composedemo.ui.theme.ComposeDemoTheme
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +25,24 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+@Composable
+fun DemoText(message: String, fontSize: Float) {
+    Text(
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Preview
+@Composable
+fun DemoTextPreview() {
+    ComposeDemoTheme {
+        DemoText(
+            message = "Welcome to Android",
+            fontSize = 12f
+        )
     }
 }
